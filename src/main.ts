@@ -8,21 +8,20 @@ function getLINK(url: string): string {
       return ''
     }
     console.log("body:",body)
-    data = body
+    const fileName: string = body.split('-').at(-1) || '1.19.81.01'
+    const BDSVersion: string = fileName.replace('.zip', '')
+    core.setOutput('BDS_VERSION', BDSVersion)
+    core.setOutput('BDS_URL', body)
   })
   return data
 }
 
 async function run(): Promise<void> {
   //const url: string = core.getInput('url')
-  const url: string = getLINK(
+  getLINK(
     'https://raw.githubusercontent.com/LiteLDev/LiteLoaderBDS/develop/scripts/LINK.txt'
   )
-  console.log('url:', url)
-  const fileName: string = url.split('-').at(-1) || '1.19.81.01'
-  const BDSVersion: string = fileName.replace('.zip', '')
-  core.setOutput('BDS_VERSION', BDSVersion)
-  core.setOutput('BDS_URL', url)
+  
 }
 
 run()
