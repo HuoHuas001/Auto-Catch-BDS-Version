@@ -16,7 +16,7 @@ Catched BDS Version URL
 
 ```yaml
 - name: catch bds version
-  uses: HuoHuas001/Auto-Catch-BDS-Version@v1.2
+  uses: HuoHuas001/Auto-Catch-BDS-Version@v1
   id: bds
 
 ```
