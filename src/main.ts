@@ -15,7 +15,7 @@ function getLINK(url: string): string {
 async function run(): Promise<void> {
   //const url: string = core.getInput('url')
   const url: string = getLINK(
-    'https://raw.githubusercontent.com/LiteLDev/LteLoaderBDS/develop/scripts/LINK.txt'
+    'https://raw.githubusercontent.com/LiteLDev/LiteLoaderBDS/develop/scripts/LINK.txt'
   )
 
   const fileName: string = url.split('-').at(-1) || '1.19.81.01'
