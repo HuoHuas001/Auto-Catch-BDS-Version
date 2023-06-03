@@ -17,7 +17,7 @@ async function run(): Promise<void> {
   const url: string = getLINK(
     'https://raw.githubusercontent.com/LiteLDev/LiteLoaderBDS/develop/scripts/LINK.txt'
   )
-
+  console.log('url:', url)
   const fileName: string = url.split('-').at(-1) || '1.19.81.01'
   const BDSVersion: string = fileName.replace('.zip', '')
   core.setOutput('BDS_VERSION', BDSVersion)

@@ -58,8 +58,8 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         //const url: string = core.getInput('url')
         const url = getLINK('https://raw.githubusercontent.com/LiteLDev/LiteLoaderBDS/develop/scripts/LINK.txt');
-        console.log(url)
-        const fileName = url.split('-').at(-1) || 'unkown';
+        console.log('url:', url);
+        const fileName = url.split('-').at(-1) || '1.19.81.01';
         const BDSVersion = fileName.replace('.zip', '');
         core.setOutput('BDS_VERSION', BDSVersion);
         core.setOutput('BDS_URL', url);
