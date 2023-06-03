@@ -1,0 +1,37 @@
+{
+  "name": "autocatchbdsversion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write 'src/*.ts'",
+    "format-check": "prettier --check 'src/*.ts'",
+    "lint": "eslint src/.ts",
+    "package": "ncc build --source-map --license licenses.txt",
+    "test": "jest",
+    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuoHuas001/Auto-Catch-BDS-Version.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "setup"
+  ],
+  "bugs": {
+    "url": "https://github.com/HuoHuas001/Auto-Catch-BDS-Version/issues"
+  },
+  "homepage": "https://github.com/HuoHuas001/Auto-Catch-BDS-Version#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "author": "HuoHua",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1"
+  }
+}
