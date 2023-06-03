@@ -16,7 +16,6 @@ jobs:
           npm install -D --force
       - run: |
           npm run build
-          npm run package
   test: # make sure the action works on a clean machine without building
     runs-on: windows-latest
     steps:
