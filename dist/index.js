@@ -1,5 +1,11 @@
-"use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+import './sourcemap-register.cjs';/******/ /* webpack/runtime/compat */
+/******/ 
+/******/ if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = new URL('.', import.meta.url).pathname.slice(import.meta.url.match(/^file:\/\/\/\w:/) ? 1 : 0, -1) + "/";
+/******/ 
+/************************************************************************/
+var __webpack_exports__ = {};
+
+var __createBinding = (undefined && undefined.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
     if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -10,24 +16,42 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
 }));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+var __setModuleDefault = (undefined && undefined.__setModuleDefault) || (Object.create ? (function(o, v) {
     Object.defineProperty(o, "default", { enumerable: true, value: v });
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
+var __importStar = (undefined && undefined.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
     if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(require("@actions/core"));
+const request_1 = __importDefault(require("request"));
+async function getLINK(url) {
+    let data = "";
+    await request_1.default.get({ url: url }, (err, httpResponse, body) => {
+        if (err) {
+            return "";
+        }
+        data = body;
+    });
+    return data;
+}
 async function run() {
-    const url = core.getInput('url');
-    let fileName = url.split("-").at(-1);
+    //const url: string = core.getInput('url')
+    let url = await getLINK('https://raw.githubusercontent.com/LiteLDev/LiteLoaderBDS/develop/scripts/LINK.txt');
+    let fileName = url.split("-").at(-1) || "1.19.81.01";
     let BDSVersion = fileName.replace(".zip", "");
     core.setOutput("BDS_VERSION", BDSVersion);
 }
 run();
+
+
+//# sourceMappingURL=index.js.map

@@ -2,7 +2,8 @@
   "name": "autocatchbdsversion",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.js",
+  "main": "lib/main.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write 'src/*.ts'",
@@ -16,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/HuoHuas001/Auto-Catch-BDS-Version.git"
   },
-  "keywords": [
+  "keywoiujrds": [
     "actions",
     "node",
     "setup"
@@ -32,6 +33,11 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@actions/github": "^5.1.1"
+    "@actions/github": "^5.1.1",
+    "https": "^1.0.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@types/request": "^2.48.8"
   }
 }

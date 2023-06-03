@@ -2,12 +2,6 @@
 
 This action catch BDS Version from Link
 
-## Inputs
-
-### `url`
-
-**Required** The url of the latest bds. Default `https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.81.01.zip`.
-
 ## Outputs
 
 ### `BDS_VERSION`
