@@ -1,30 +1,22 @@
 name: 'build-test'
 on: # rebuild any PRs and main branch changes
   pull_request:
-  push: 
-      
+  push:
+    branches:
+      - main
+      - 'releases/*'
 
 jobs:
-  test: # make sure the action works on a clean machine without building
-    runs-on: windows-latest
+  build: # make sure build/ci work properly
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: 'test'
-        uses: ./
-        id: version
-        if: success()
-
-      - name: 'test Version'
-        run: |
-          echo ${{steps.version.outputs.BDS_VERSION}}
-
-      - name: Release on GitHub
-        uses: softprops/action-gh-release@v1
-        if: success() && startsWith(github.ref, 'refs/tags/')
-        with:
-          name: ${{ github.ref_name }}
-          body_path: ./CHANGELOG.md
-        env:
-            GITHUB_REPOSITORY: HuoHuas001/AutoCatchBDSVersion
-
+      - uses: actions/checkout@v3
+      - run: |
+          npm install
+      - run: |
+          npm run all
+  test: # make sure the action works on a clean machine without building
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./

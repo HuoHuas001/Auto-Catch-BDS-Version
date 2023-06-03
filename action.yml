@@ -1,18 +1,11 @@
-name: 'Auto-Catch-BDS-Version'
-description: 'Automatic catch BDS Version from LINK'
-author: 'HuoHua'
-inputs: 
-  url: # change this # 参数名,
-    required: true # 是否是必填
-    description: "BDS Download Link" # 参数的说明
-    default: "https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.81.01.zip" # 默认值
-outputs:
-  BDS_VERSION: # id of output
-    description: 'Catched BDS Version Number'
-branding:
-  icon: 'archive'  
-  color: 'blue'
+name: 'Your name here'
+description: 'Provide a description here'
+author: 'Your name or organization here'
+inputs:
+  milliseconds: # change this
+    required: true
+    description: 'input description here'
+    default: 'default value if applicable'
 runs:
   using: 'node16'
   main: 'dist/index.js'
-  
