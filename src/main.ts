@@ -7,6 +7,7 @@ function getLINK(url: string): string {
     if (err) {
       return ''
     }
+    console.log("body:",body)
     data = body
   })
   return data
