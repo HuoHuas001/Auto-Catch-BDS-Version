@@ -15,5 +15,8 @@ Catched BDS Version URL
 ## Example usage
 
 ```yaml
-uses: HuoHuas001/Auto-Catch-BDS-Version@v1
+- name: catch bds version
+  uses: HuoHuas001/Auto-Catch-BDS-Version@v1
+  id: bds
+
 ```
