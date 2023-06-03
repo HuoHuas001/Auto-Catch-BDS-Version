@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/main.js",
-  "type": "module",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write 'src/*.ts'",

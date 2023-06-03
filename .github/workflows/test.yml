@@ -27,8 +27,6 @@ jobs:
         uses: ./
         id: version
         if: success()
-        with: 
-          url: 'https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.81.01.zip'
 
       - name: 'test Version'
         run: |
