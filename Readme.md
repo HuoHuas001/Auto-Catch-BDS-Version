@@ -16,7 +16,12 @@ Catched BDS Version URL
 
 ```yaml
 - name: catch bds version
-  uses: HuoHuas001/Auto-Catch-BDS-Version@v1
+  uses: HuoHuas001/Auto-Catch-BDS-Version@v1.1.3
   id: bds
+
+- name: Download Server
+  run: |
+    echo ${{steps.version.outputs.BDS_VERSION}}
+    echo ${{steps.version.outputs.BDS_URL}}
 
 ```
