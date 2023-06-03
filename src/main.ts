@@ -21,6 +21,7 @@ async function run(): Promise<void> {
   const fileName: string = url.split('-').at(-1) || '1.19.81.01'
   const BDSVersion: string = fileName.replace('.zip', '')
   core.setOutput('BDS_VERSION', BDSVersion)
+  core.setOutput('BDS_URL', url)
 }
 
 run()
