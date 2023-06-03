@@ -19,4 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./
+
+      - name: test
+        uses: ./
+        id: 'version'
+
+      - name: 'test Version'
+        run: |
+          echo ${{steps.version.outputs.BDS_VERSION}}
+          echo ${{steps.version.outputs.BDS_URL}}
+
